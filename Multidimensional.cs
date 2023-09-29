@@ -5,6 +5,7 @@ namespace FormsMultidimensional_G2_2024_1
     internal class Multidimensional: Matriz
     {
         float[,] A;
+        
 
         public Multidimensional(int M, int N)
         {
@@ -37,6 +38,54 @@ namespace FormsMultidimensional_G2_2024_1
 
             return m1;
         }
+        public static Multidimensional operator +(Multidimensional m1, Multidimensional m2)
+        {
+            Multidimensional m3 = new Multidimensional(m1.M, m1.N);
+            for (int i = 0; i < m1.M; i++)
+            {
+               
+                for (int j = 0; j < m1.N; j++)
+                {
+                    m3.A[i, j] = m1.A[i, j] + m2.A[i, j];
+                }
+            }
+            return m3;
+        }
+        public static Multidimensional operator -(Multidimensional m1, Multidimensional m2)
+        {
+            Multidimensional m3 = new Multidimensional(m1.M, m2.N);
+
+            for (int i = 0; i < m1.M; i++)
+            {
+                for (int j = 0; j < m1.N; j++)
+                {
+                    m3.A[i, j] = m1.A[i, j] - m2.A[i, j];
+                }
+            }
+            return m3;
+        }
+        public static Multidimensional operator *(Multidimensional m1, Multidimensional m2)
+        {
+            Multidimensional m3 = new Multidimensional(m1.M, m2.N);
+            if(m1.N == m2.M)
+            {
+                for (int i = 0; i < m1.M; i++)
+                {
+                    for (int j = 0; j < m2.N; j++)
+                    {
+                        m3.A[i, j] = 0;
+                        for (int s = 0; s < m1.N; s++)
+                        {
+                            m3.A[i, j] += m1.A[i, s] * m2.A[s, j];
+                        }
+                           
+                    }
+                }
+            }
+            
+            return m3;
+        }
+
         public override string ToString()
         {
             //1  2
