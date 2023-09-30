@@ -53,7 +53,7 @@ namespace FormsMultidimensional_G2_2024_1
         }
         public static Multidimensional operator -(Multidimensional m1, Multidimensional m2)
         {
-            Multidimensional m3 = new Multidimensional(m1.M, m2.N);
+            Multidimensional m3 = new Multidimensional(m1.M, m1.N);
 
             for (int i = 0; i < m1.M; i++)
             {
@@ -85,6 +85,26 @@ namespace FormsMultidimensional_G2_2024_1
             
             return m3;
         }
+        public static Multidimensional senoMatriz(Multidimensional m, bool V)
+        {
+            Multidimensional mSeno = new Multidimensional(m.M, m.N);
+
+            for (int i = 0; i < m.M; i++)
+            {
+                for (int j = 0; j < m.N; j++)
+                {
+                    if (V)
+                        mSeno.A[i, j] = Truncar((float)Math.Sin(m.A[i, j]));
+                    else
+                        mSeno.A[i, j] = Truncar((float)Math.Sin(m.A[i, j]*(Math.PI/180)));
+                }
+            }
+            return mSeno;
+        }
+        public static float Truncar(float x)
+        {
+            return (float)Math.Truncate(x*1000)/1000;
+        }
 
         public override string ToString()
         {
@@ -95,9 +115,9 @@ namespace FormsMultidimensional_G2_2024_1
             {
                 for (int j = 0; j < N; j++)
                 {
-                    A += " " + this.A[i, j].ToString();
+                    A += "    " + this.A[i, j].ToString();
                 }
-                A += "\n";
+                A += "\n\n";
             }
             return A;
         }

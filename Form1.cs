@@ -36,23 +36,32 @@ namespace FormsMultidimensional_G2_2024_1
         {
             txtbDisplay.Text = "";
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSuma_Click(object sender, EventArgs e)
         {
             m3 = m1 + m2;
             lbResultado.Text = m3.ToString();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnResta_Click(object sender, EventArgs e)
         {
             m3 = m1 - m2;
             lbResultado.Text = m3.ToString();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnMultiplicacion_Click(object sender, EventArgs e)
         {
             m3 = m1 * m2;
             lbResultado.Text = m3.ToString();
+        }
+        private void btnSeno_Click(object sender, EventArgs e)
+        {
+
+            if (rdbRad.Checked)
+                lbResultado.Text = Multidimensional.senoMatriz(m3, true).ToString();
+            else if (rdbDeg.Checked)
+                lbResultado.Text = Multidimensional.senoMatriz(m3, false).ToString();
+            else
+                MessageBox.Show("Selecicone una opción: rad o deg");
         }
     }
 }
