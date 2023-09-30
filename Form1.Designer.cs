@@ -159,7 +159,6 @@
             this.lbMatriz1.Name = "lbMatriz1";
             this.lbMatriz1.Size = new System.Drawing.Size(126, 126);
             this.lbMatriz1.TabIndex = 3;
-            this.lbMatriz1.Text = "0";
             // 
             // lbMatriz2
             // 
@@ -167,16 +166,14 @@
             this.lbMatriz2.Name = "lbMatriz2";
             this.lbMatriz2.Size = new System.Drawing.Size(126, 126);
             this.lbMatriz2.TabIndex = 3;
-            this.lbMatriz2.Text = "0";
             // 
             // lbResultado
             // 
             this.lbResultado.AutoSize = true;
             this.lbResultado.Location = new System.Drawing.Point(521, 198);
             this.lbResultado.Name = "lbResultado";
-            this.lbResultado.Size = new System.Drawing.Size(13, 13);
+            this.lbResultado.Size = new System.Drawing.Size(0, 13);
             this.lbResultado.TabIndex = 3;
-            this.lbResultado.Text = "0";
             // 
             // label4
             // 

@@ -34,7 +34,13 @@ namespace FormsMultidimensional_G2_2024_1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtbDisplay.Text = "";
+            txtbDisplay.Clear();
+            lbMatriz1.Text = "";
+            lbMatriz2.Text = "";
+            lbResultado.Text = "";
+            rdbDeg.Checked = false;
+            rdbRad.Checked = false;
+            Intro = true;
         }
         private void btnSuma_Click(object sender, EventArgs e)
         {
